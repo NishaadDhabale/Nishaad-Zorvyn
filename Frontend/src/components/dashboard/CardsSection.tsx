@@ -22,7 +22,7 @@ export const CardsSection = () => {
   const transactions = useTransactionStore((state) => state.transactions);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  // Get processed data from logic.ts
+  
   const data = useMemo(() => getCategorySpending(transactions), [transactions]);
   const total = data.reduce((sum, d) => sum + d.value, 0);
 
@@ -68,7 +68,7 @@ export const CardsSection = () => {
               </PieChart>
             </ResponsiveContainer>
 
-            {/* Center Label */}
+
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
               <span className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">Total</span>
               <span className="text-xl font-bold text-gray-900 dark:text-white mt-1">
@@ -77,7 +77,7 @@ export const CardsSection = () => {
             </div>
           </div>
 
-          {/* Legend */}
+
           <div className="grid grid-cols-2 gap-x-2 gap-y-3 mt-6">
             {data.map((entry, index) => (
               <div

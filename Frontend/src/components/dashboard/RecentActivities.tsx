@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'; // Added useMemo for performance
+import { useState, useMemo } from 'react';
 import {
   Search,
   Filter,
@@ -135,7 +135,7 @@ export const RecentActivities = ({
 
         return matchesSearch && matchesType;
       })
-      .slice(0, limit || transactions.length); // Apply limit AFTER filtering
+      .slice(0, limit || transactions.length);
   }, [transactions, searchTerm, typeFilter, limit]);
 
   const handleExportJSON = () => {
@@ -163,7 +163,6 @@ export const RecentActivities = ({
           <div className="flex items-center gap-2">Export CSV</div>
         </motion.button>
 
-        {/* --- Right Button: JSON (Trapezoid) --- */}
         <motion.button
           whileHover={{ scale: 1.02, zIndex: 20 }}
           whileTap={{ scale: 0.98 }}

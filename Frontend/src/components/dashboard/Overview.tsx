@@ -18,14 +18,14 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-// Component Imports (Adjust paths as necessary)
+
 import { TotalBalance } from './TotalBalance';
 import { CardsSection } from './CardsSection';
 import { QuickStats } from './QuickStats';
 import { IncomeChart } from './IncomeChart';
 import { RecentActivities } from './RecentActivities';
 
-// --- Types ---
+
 type ComponentName =
   | 'TotalBalance'
   | 'CardsSection'
@@ -39,7 +39,6 @@ type Item = {
   className: string;
 };
 
-// --- Framer Motion Variants ---
 const containerVariants: any = {
   hidden: { opacity: 0 },
   show: {
@@ -57,7 +56,7 @@ const itemVariants: any = {
   },
 };
 
-// --- Component Factory ---
+
 const ComponentFactory = ({ name }: { name: ComponentName }) => {
   const components = {
     TotalBalance: <TotalBalance />,
@@ -103,7 +102,7 @@ function SortableItem({
       style={style}
       variants={itemVariants}
       layout
-      // Only spread listeners if we are editing
+
       {...(isEditing ? { ...attributes, ...listeners } : {})}
       className={`${item.className} ${
         isEditing ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'
@@ -118,7 +117,7 @@ function SortableItem({
             : ''
         }`}
       >
-        {/* Visual Indicator for Edit Mode */}
+        
         <AnimatePresence>
           {isEditing && (
             <motion.div

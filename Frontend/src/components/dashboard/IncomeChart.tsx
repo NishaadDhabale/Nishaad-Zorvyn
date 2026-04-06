@@ -6,7 +6,7 @@ import { getMonthlyBarChartData, formatCurrency } from '../../utils/logic';
 export const IncomeChart = () => {
   const transactions = useTransactionStore((state) => state.transactions);
 
-  // Calculate dynamic data
+  
   const { chartData, yAxisLabels } = useMemo(
     () => getMonthlyBarChartData(transactions),
     [transactions]
@@ -46,7 +46,7 @@ export const IncomeChart = () => {
           ))}
         </div>
 
-        {/* Grid lines */}
+
         <div className="absolute left-8 right-0 top-0 bottom-6 flex flex-col justify-between pointer-events-none">
           {[1, 2, 3, 4, 5].map((_, i) => (
             <div key={i} className="border-b border-dashed border-gray-200 dark:border-gray-800/60 w-full"></div>
@@ -61,17 +61,17 @@ export const IncomeChart = () => {
               className="flex flex-col items-center gap-2 group w-8 relative"
               title={`Income: ${formatCurrency(data.rawIncome)}\nExpense: ${formatCurrency(data.rawExpense)}`} // Native HTML tooltip on hover
             >
-              {/* Stacked Bar Container */}
+
               <div className="w-full flex flex-col justify-end gap-[1px] h-48">
 
-                {/* Profit/Income Bar (Striped Orange) */}
+
                 <motion.div
                   initial={{ height: 0 }}
                   animate={{ height: `${data.profitPercent}%` }}
                   transition={{ duration: 0.8, delay: idx * 0.05, type: 'spring', bounce: 0.2 }}
                   className={`w-full relative overflow-hidden bg-[#FF5722] ${data.lossPercent === 0 ? 'rounded-b-md' : ''} ${data.profitPercent > 0 ? 'rounded-t-md' : ''}`}
                 >
-                  {/* CSS Stripes */}
+
                   <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_4px,#000_4px,#000_8px)]"></div>
                 </motion.div>
 

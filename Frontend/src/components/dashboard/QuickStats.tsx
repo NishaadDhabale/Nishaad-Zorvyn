@@ -4,7 +4,7 @@ import { Wallet, Lock, Database, Briefcase, TrendingUp, TrendingDown } from 'luc
 import { useTransactionStore } from '../../hooks/useTransactionStore';
 import { calculateQuickStats } from '../../utils/logic';
 
-// Helper to map titles to specific icons
+
 const ICON_MAP: Record<string, React.ReactNode> = {
   "Total Balance": <Wallet size={18} />,
   "Total Spending This Month": <Lock size={18} />,
@@ -15,7 +15,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 export const QuickStats = () => {
   const transactions = useTransactionStore((state) => state.transactions);
 
-  // 1. Get real values and trends from logic.ts
+ 
   const stats = useMemo(() => calculateQuickStats(transactions), [transactions]);
 
   return (
