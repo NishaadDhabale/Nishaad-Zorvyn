@@ -141,8 +141,8 @@ export  function Overview() {
   const [items, setItems] = useState<Item[]>([
     { id: '1', name: 'TotalBalance', className: 'lg:col-span-4' },
     { id: '3', name: 'QuickStats', className: 'lg:col-span-4' },
-    { id: '5', name: 'RecentActivities', className: 'lg:col-span-8' },
     { id: '2', name: 'CardsSection', className: 'lg:col-span-4' },
+    { id: '5', name: 'RecentActivities', className: 'lg:col-span-8' },
     { id: '4', name: 'IncomeChart', className: 'lg:col-span-4' },
 
   ]);
@@ -170,7 +170,7 @@ export  function Overview() {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="p-1 max-w-7xl mx-auto min-h-screen bg-gray-50 dark:bg-[#0F0F12]"
+      className="p-1 m-5 md:m-1 max-w-7xl mx-auto min-h-screen bg-gray-50 dark:bg-[#0F0F12]"
     >
       {/* Header with Toggle */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">

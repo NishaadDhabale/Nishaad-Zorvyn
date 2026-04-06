@@ -28,7 +28,7 @@ export const TopNav = () => {
   const roles = ['Admin', 'Viewer'];
   return (
     <header className="h-20 px-8 flex items-center justify-between bg-transparent">
-      <div className="flex space-x-2 bg-white dark:bg-[#1A1A1E] p-1.5 rounded-full shadow-sm">
+      <div className="flex flex-col md:flex-row mt-10 md:mt-0 space-x-2 bg-white dark:bg-[#1A1A1E] p-1.5 rounded-full shadow-sm">
         {['Overview', 'Transactions', 'Insights'].map((item) => {
           const isActive = selectedTab === item;
 
@@ -64,31 +64,17 @@ export const TopNav = () => {
 
       {/* Right Side Icons & Profile */}
       <div className="flex items-center gap-6">
-        <div className="flex items-center gap-4 bg-white dark:bg-[#1A1A1E] p-2.5 rounded-full shadow-sm text-gray-500">
-          <Search
-            size={20}
-            className="hover:text-gray-900 cursor-pointer transition-colors"
-          />
-          <Bell
-            size={20}
-            className="hover:text-gray-900 cursor-pointer transition-colors"
-          />
-          <AlertCircle
-            size={20}
-            className="hover:text-gray-900 cursor-pointer transition-colors"
-          />
-        </div>
         <div className="relative">
           {/* --- Trigger Pill --- */}
           <div
             onClick={() => setIsOpen(!isOpen)}
             className="flex items-center gap-3 bg-white dark:bg-[#1A1A1E] p-1.5 pr-4 rounded-full shadow-sm cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition"
           >
-             <div className="w-10 h-10 bg-[#FF5722] rounded-xl flex items-center justify-center text-white font-bold text-xl mb-8 shadow-lg shadow-orange-500/30">
+             <div className="w-10 h-10 bg-[#FF5722] rounded-xl flex items-center justify-center text-white font-bold text-xl mb-1 ">
         {role.charAt(0).toUpperCase()}
       </div>
             <div className="hidden lg:block">
-              <p className="text-[16px] text-orange-500 font-bold uppercase tracking-wider">
+              <p className="text-[10px] text-orange-500 font-bold uppercase tracking-wider">
                 {role}
               </p>
             </div>
