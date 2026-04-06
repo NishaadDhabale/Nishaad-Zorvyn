@@ -175,9 +175,7 @@ export  function Overview() {
       {/* Header with Toggle */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
         <motion.div variants={itemVariants}>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
-            Good morning, Sajibur
-          </h1>
+
           <p className="text-gray-500 dark:text-gray-400">
             Customize your workspace by dragging cards.
           </p>

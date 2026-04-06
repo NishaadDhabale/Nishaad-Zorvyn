@@ -84,16 +84,11 @@ export const TopNav = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="flex items-center gap-3 bg-white dark:bg-[#1A1A1E] p-1.5 pr-4 rounded-full shadow-sm cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition"
           >
-            <img
-              src="https://i.pravatar.cc/150?u=sajibur"
-              alt="User"
-              className="w-10 h-10 rounded-full"
-            />
+             <div className="w-10 h-10 bg-[#FF5722] rounded-xl flex items-center justify-center text-white font-bold text-xl mb-8 shadow-lg shadow-orange-500/30">
+        {role.charAt(0).toUpperCase()}
+      </div>
             <div className="hidden lg:block">
-              <p className="text-sm font-semibold text-gray-900 dark:text-white leading-tight">
-                Someone
-              </p>
-              <p className="text-[10px] text-orange-500 font-bold uppercase tracking-wider">
+              <p className="text-[16px] text-orange-500 font-bold uppercase tracking-wider">
                 {role}
               </p>
             </div>
