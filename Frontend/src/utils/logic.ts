@@ -158,7 +158,7 @@ export const getMonthlyBarChartData = (transactions: any[]) => {
 
   return { chartData, yAxisLabels };
 };
-export const getCategorySpending = (transactions: any[]) => {
+export const getCategorySpending = (transactions: any[]): { name: string; value: number; fill: string }[] => {
   const rawData = transactions
     .filter((t) => t.type === 'expense')
     .reduce(
@@ -170,8 +170,8 @@ export const getCategorySpending = (transactions: any[]) => {
       {} as Record<string, number>,
     );
 
-  return Object.entries(rawData)
-    .sort(([, a], [, b]) => b - a)
+  return (Object.entries(rawData) as [string, number][])
+    .sort((a, b) => b[1] - a[1])
     .slice(0, 6)
     .map(([name, value]) => ({
       name,

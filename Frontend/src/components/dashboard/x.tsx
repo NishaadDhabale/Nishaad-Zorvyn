@@ -1,13 +1,9 @@
 import { useState, useMemo } from 'react';
 import {
   Search,
-  Filter,
-  MoreHorizontal,
   Edit2,
   Trash,
-  X,
   Save,
-  Code,
   // Icons for the mapper
   Briefcase, Wallet, Palette, Package, Laptop, Zap,
   Activity, Coffee, Car, TrendingUp, Film, Home,
@@ -18,7 +14,6 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTransactionStore } from '../../hooks/useTransactionStore';
 import { useShallow } from 'zustand/shallow';
-import { useRoleStore } from '../../hooks/useRoleStore';
 import { convertToCSV, triggerDownload } from '../../utils/export.ts';
 
 // 1. Icon Mapper: Connects JSON strings to Lucide Components
@@ -50,8 +45,6 @@ export const RecentActivities = ({ limit, isFullPage = false }: { limit?: number
       editTransaction: state.editTransaction,
     }))
   );
-  const role = useRoleStore((state) => state.role);
-
   // Formatting Helper
   const formatCurrency = (val: number) =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
@@ -128,7 +121,7 @@ export const RecentActivities = ({ limit, isFullPage = false }: { limit?: number
           </thead>
           <tbody className="relative">
             <AnimatePresence mode="popLayout">
-              {filteredData.map((item, idx) => {
+              {filteredData.map((item) => {
                 const Icon = ICON_MAP[item.icon] || Wallet;
                 const isEditing = editing.isEditing && editing.editingId === item.id;
 

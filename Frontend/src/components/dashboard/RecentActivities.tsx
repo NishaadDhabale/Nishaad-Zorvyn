@@ -92,10 +92,11 @@ export const RecentActivities = ({
     editingId: '',
     isEditing: false,
     updatedData: {
+      id: '',
       date: '',
       amount: 0,
       category: '',
-      type: 'income' | 'expense',
+      type: 'income' as 'income' | 'expense',
       description: '',
       account: '',
       icon: '',
@@ -322,7 +323,7 @@ export const RecentActivities = ({
                                 ...editing,
                                 updatedData: {
                                   ...editing.updatedData,
-                                  amount: e.target.value,
+                                  amount: Number(e.target.value),
                                 },
                               })
                             }

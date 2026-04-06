@@ -4,9 +4,6 @@ import {
   Bell,
   AlertCircle,
   ChevronDown,
-  Shield,
-  User,
-  LogOut,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigationStore } from '../../hooks/useNavigationStore';
