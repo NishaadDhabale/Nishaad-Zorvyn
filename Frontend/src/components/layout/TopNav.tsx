@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import {
-  Search,
-  Bell,
-  AlertCircle,
   ChevronDown,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
